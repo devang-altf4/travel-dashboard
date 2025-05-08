@@ -428,7 +428,7 @@ export default function TravelDashboard() {
                 theme === "dark" ? "bg-[#181f2a]" : "bg-gray-100"
               )}>
                 {/* Activity Card 1 */}
-                <div className="flex h-48 rounded-xl overflow-hidden">
+                <div className="flex h-48 rounded-xl overflow-hidden border border-gray-400">
                   <div className="relative w-[40%]">
                     <Image
                       src="/1.webp"
@@ -468,7 +468,7 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity Card 2 */}
-                <div className="flex h-48 rounded-xl overflow-hidden">
+                <div className="flex h-48 rounded-xl overflow-hidden border border-gray-400">
                   <div className="relative w-[40%]">
                     <Image
                       src="/2.jpg"
@@ -508,7 +508,7 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity Card 3 */}
-                <div className="flex h-48 rounded-xl overflow-hidden">
+                <div className="flex h-48 rounded-xl overflow-hidden border border-gray-400">
                   <div className="relative w-[40%]">
                     <Image
                       src="/3.jpg"
