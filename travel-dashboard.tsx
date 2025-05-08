@@ -274,7 +274,7 @@ export default function TravelDashboard() {
               <div className="bg-gray-900 rounded-xl p-4 space-y-4">
                 <div className="flex gap-4">
                   <Image
-                    src="/placeholder.svg?height=100&width=100"
+                    src="/1.webp"
                     alt="Senso-ji Temple"
                     width={100}
                     height={100}
@@ -301,7 +301,7 @@ export default function TravelDashboard() {
 
                 <div className="flex gap-4">
                   <Image
-                    src="/placeholder.svg?height=100&width=100"
+                    src="/2.jpg"
                     alt="Tokyo Sky Tree"
                     width={100}
                     height={100}
@@ -328,7 +328,7 @@ export default function TravelDashboard() {
 
                 <div className="flex gap-4">
                   <Image
-                    src="/placeholder.svg?height=100&width=100"
+                    src="/3.jpg"
                     alt="Kimono Wearing"
                     width={100}
                     height={100}
