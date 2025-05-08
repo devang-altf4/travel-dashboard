@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import {
   ArrowRight,
   ArrowUpRight,
@@ -80,12 +81,36 @@ export default function TravelDashboard() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"))
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  }
+
   return (
-    <div className={cn("min-h-screen", theme === "dark" ? "bg-black text-white" : "bg-white text-black")}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className={cn("min-h-screen", theme === "dark" ? "bg-black text-white" : "bg-white text-black")}
+    >
       {/* Container with responsive padding */}
       <div className="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
         {/* Header - Similar on mobile and desktop */}
-        <header className="flex items-center justify-between mb-6">
+        <motion.header variants={itemVariants} className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold">Hello Chhavi!</h1>
             <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Ready for the trip?</p>
@@ -111,10 +136,10 @@ export default function TravelDashboard() {
               C
             </div>
           </div>
-        </header>
+        </motion.header>
 
         {/* Main content - Responsive layout changes */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Trip overview - Takes full width on mobile, 2/3 on desktop */}
           <div className="lg:col-span-2 space-y-6">
             <section>
@@ -289,10 +314,10 @@ export default function TravelDashboard() {
               </div>
             </section>
           </div>
-        </div>
+        </motion.div>
 
         {/* Activities section - Full width on both layouts but with responsive adjustments */}
-        <section className="mt-6">
+        <motion.section variants={itemVariants} className="mt-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className={cn(
               "text-xl font-semibold",
@@ -525,15 +550,18 @@ export default function TravelDashboard() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Footer Navigation */}
-        <footer className={cn(
-          "fixed bottom-0 left-0 right-0 border-t py-2 px-4 md:py-4 z-10",
-          theme === "dark"
-            ? "bg-gray-900 border-gray-800"
-            : "bg-white border-gray-200"
-        )}>
+        <motion.footer
+          variants={itemVariants}
+          className={cn(
+            "fixed bottom-0 left-0 right-0 border-t py-2 px-4 md:py-4 z-10",
+            theme === "dark"
+              ? "bg-gray-900 border-gray-800"
+              : "bg-white border-gray-200"
+          )}
+        >
           <div className="md:hidden flex justify-between items-center">
             {/* Home button */}
             <button
@@ -657,7 +685,7 @@ export default function TravelDashboard() {
               </div>
             </div>
           </div>
-        </footer>
+        </motion.footer>
 
         {/* Add padding at the bottom to prevent content from being hidden behind the footer */}
         <div className="h-16 md:h-20"></div>
@@ -669,6 +697,6 @@ export default function TravelDashboard() {
         onClose={() => setIsPlanningModalOpen(false)} 
         theme={theme}
       />
-    </div>
+    </motion.div>
   )
 }
