@@ -145,7 +145,7 @@ export default function TravelDashboard() {
                 <div className="bg-gray-900 rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
                   <div className="relative">
                     <Image
-                      src="/placeholder.svg?height=150&width=300"
+                      src="/real shinagawa.jpg"
                       alt="Shinagawa Prince Hotel"
                       width={300}
                       height={150}
