@@ -188,7 +188,7 @@ export default function TravelDashboard() {
               {/* Responsive: horizontal scroll on mobile, grid on desktop */}
               <div className="flex overflow-x-auto gap-4 pb-2 -mx-4 px-4 lg:grid lg:grid-cols-1 lg:gap-4 lg:overflow-visible lg:mx-0 lg:px-0">
                 {/* Card 1 */}
-                <div className="bg-gray-900 rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
+                <div className="rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
                   <div className="relative">
                     <Image
                       src="/real shinagawa.jpg"
@@ -220,7 +220,7 @@ export default function TravelDashboard() {
                   </div>
                 </div>
                 {/* Card 2 */}
-                <div className="bg-gray-900 rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
+                <div className="rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
                   <div className="relative">
                     <Image
                       src="/shinagawa hotel.jpg"
@@ -319,7 +319,7 @@ export default function TravelDashboard() {
             <div className="lg:col-span-2">
               <div className="space-y-4">
                 {/* Activity 1 */}
-                <div className="bg-gray-900 rounded-xl flex overflow-hidden h-40">
+                <div className="rounded-xl flex overflow-hidden h-40">
                   <div className="w-40 h-full flex-shrink-0">
                     <Image
                       src="/1.webp"
@@ -349,7 +349,7 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity 2 */}
-                <div className="bg-gray-900 rounded-xl flex overflow-hidden h-40">
+                <div className="rounded-xl flex overflow-hidden h-40">
                   <div className="w-40 h-full flex-shrink-0">
                     <Image
                       src="/2.jpg"
@@ -379,7 +379,7 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity 3 */}
-                <div className="bg-gray-900 rounded-xl flex overflow-hidden h-40">
+                <div className="rounded-xl flex overflow-hidden h-40">
                   <div className="w-40 h-full flex-shrink-0">
                     <Image
                       src="/3.jpg"
