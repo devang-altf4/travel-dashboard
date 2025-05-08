@@ -1,7 +1,6 @@
 "use client"
 
-import React from "react"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -52,6 +51,7 @@ export default function TravelDashboard() {
   const [activeDay, setActiveDay] = useState(1)
   const [isPlanningModalOpen, setIsPlanningModalOpen] = useState(false)
   const [theme, setTheme] = useState<"light" | "dark">("light")
+  const [selectedDay, setSelectedDay] = useState(27)
 
   // Detect theme on mount (client-side)
   useEffect(() => {
@@ -304,181 +304,234 @@ export default function TravelDashboard() {
         </div>
 
         {/* Activities section - Full width on both layouts but with responsive adjustments */}
-        <section className={cn("mt-6 p-6 rounded-xl", theme === "dark" ? "bg-[#181c23] text-white" : "bg-white text-black")}>
+        <section className="mt-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-mont-700">Activities</h2>
-            <a href="#" className={cn("text-sm font-mont-700", theme === "dark" ? "text-lime-400" : "text-blue-600")}>
+            <h2 className={cn(
+              "text-xl font-semibold",
+              theme === "dark" ? "text-white" : "text-black"
+            )}>Activities</h2>
+            <a
+              href="#"
+              className={cn(
+                "text-sm",
+                theme === "dark" ? "text-yellow-400" : "text-blue-600"
+              )}
+            >
               See all
             </a>
           </div>
 
-          <div className="flex gap-2 mb-4">
-            <div className={cn(
-              "font-medium py-1 px-3 rounded-full text-sm",  
-              theme === "dark" 
-                ? "bg-lime-400 text-black"
-                : "bg-blue-600 text-white"
-            )}>
-              Day Plan
-            </div>
-            <div className={cn(
-              "font-medium py-1 px-3 rounded-full text-sm",
-              theme === "dark"
-                ? "bg-[#232733] text-white"
-                : "bg-white text-blue-600 border border-blue-600"
-            )}>
-              14 Activities
-            </div>
-          </div>
-
-          <div className="lg:grid lg:grid-cols-[300px,1fr] lg:gap-6">
-            {/* Calendar section */}
-            <div className={cn(
-              "rounded-xl p-4 mb-4 lg:mb-0",
-              theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
-            )}>
-              <div className="grid grid-cols-5 gap-4">
-                <div className="flex flex-col items-center">
-                  <div className={cn(
-                    "text-xs font-bold mb-1",
-                    theme === "dark" ? "text-lime-400" : "text-blue-600"
-                  )}>JAN</div>
-                  <div className={cn(
-                    "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold",
-                    theme === "dark"
-                      ? "bg-lime-400 text-black"
-                      : "bg-blue-600 text-white"
-                  )}>
-                    27
-                  </div>
-                  <div className="text-xs mt-1">MON</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className={cn(
-                    "text-xs font-bold mb-1",
-                    theme === "dark" ? "text-[#49505e]" : "text-[#bdbdbd]"
-                  )}>FEB</div>
-                  <div className={cn(
-                    "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold",
-                    theme === "dark"
-                      ? "bg-[#232733] text-[#49505e]"
-                      : "bg-[#f7f7fa] text-[#bdbdbd] border border-[#e6e8ec]"
-                  )}>
-                    1
-                  </div>
-                  <div className="text-xs mt-1">SAT</div>
-                </div>
-                {/* Repeat for other days... */}
-              </div>
-
-              <div className="mt-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left column */}
+            <div className="lg:col-span-1 space-y-4">
+              {/* Day Plan and Activities */}
+              <div className="flex gap-2 mb-4">
                 <div className={cn(
-                  "flex items-center gap-2 p-3 rounded-lg",
+                  "font-medium py-1 px-3 rounded-full text-sm",
                   theme === "dark" ? "bg-lime-400 text-black" : "bg-blue-600 text-white"
                 )}>
-                  <span>Day 1</span>
-                  <span>27.01.2025</span>
-                  <span className="ml-auto">3 Activities</span>
+                  Day Plan
+                </div>
+                <div className={cn(
+                  "font-medium py-1 px-3 rounded-full text-sm flex items-center",
+                  theme === "dark" ? "bg-[#181f2a] text-white" : "bg-white text-blue-600 border border-blue-600"
+                )}>
+                  <span>14 Activities</span>
+                </div>
+              </div>
+
+              {/* Calendar days */}
+              <div className={cn(
+                "rounded-2xl p-6",
+                theme === "dark" ? "bg-[#181f2a]" : "bg-gray-100"
+              )}>
+                <div className="grid grid-cols-7 gap-2 text-center">
+                  <div className="flex flex-col items-center">
+                    <div className={cn(
+                      "text-xs font-bold",
+                      theme === "dark" ? "text-lime-400" : "text-blue-600"
+                    )}>JAN</div>
+                    <div
+                      className={cn(
+                        "w-10 h-10 rounded-full flex items-center justify-center text-base mt-1 font-bold cursor-pointer",
+                        selectedDay === 27
+                          ? (theme === "dark" ? "bg-lime-400 text-black" : "bg-blue-600 text-white")
+                          : (theme === "dark" ? "bg-[#232b39] text-white" : "bg-white text-blue-600 border border-blue-600")
+                      )}
+                      onClick={() => setSelectedDay(27)}
+                    >
+                      27
+                    </div>
+                    <div className={cn(
+                      "text-xs mt-1",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>MON</div>
+                  </div>
+                  {[28, 29, 30, 31, 1].map((day, idx) => (
+                    <div key={day} className="flex flex-col items-center">
+                      <div className={cn(
+                        "text-xs font-bold",
+                        idx === 4
+                          ? (theme === "dark" ? "text-gray-400" : "text-blue-600")
+                          : "text-transparent"
+                      )}>
+                        {idx === 4 ? "FEB" : "JAN"}
+                      </div>
+                      <div
+                        className={cn(
+                          "w-10 h-10 rounded-full flex items-center justify-center text-base mt-1 font-bold cursor-pointer",
+                          selectedDay === day
+                            ? (theme === "dark" ? "bg-lime-400 text-black" : "bg-blue-600 text-white")
+                            : (theme === "dark" ? "bg-[#232b39] text-white" : "bg-white text-blue-600 border border-blue-600")
+                        )}
+                        onClick={() => setSelectedDay(day)}
+                      >
+                        {day}
+                      </div>
+                      <div className={cn(
+                        "text-xs mt-1",
+                        theme === "dark" ? "text-gray-400" : "text-gray-500"
+                      )}>
+                        {["TUE", "WED", "THU", "FRI", "SAT"][idx]}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Day info */}
+              <div className={cn(
+                "rounded-2xl p-6",
+                theme === "dark" ? "bg-[#181f2a]" : "bg-gray-100"
+              )}>
+                <div className="flex items-center gap-2">
+                  <div className={cn(
+                    "font-medium py-1 px-3 rounded-full text-sm",
+                    theme === "dark" ? "bg-lime-400 text-black" : "bg-blue-600 text-white"
+                  )}>Day 1</div>
+                  <div className={cn(
+                    "text-sm",
+                    theme === "dark" ? "text-white" : "text-black"
+                  )}>27.01.2025</div>
+                  <div className={cn(
+                    "ml-auto text-sm font-medium",
+                    theme === "dark" ? "text-lime-400" : "text-blue-600"
+                  )}>3 Activities</div>
                 </div>
               </div>
             </div>
 
-            {/* Activities list */}
-            <div className="space-y-4">
-              {/* Activity 1 */}
+            {/* Right column */}
+            <div className="lg:col-span-2">
               <div className={cn(
-                "rounded-xl flex overflow-hidden",
-                theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
+                "rounded-2xl p-6 space-y-6",
+                theme === "dark" ? "bg-[#181f2a]" : "bg-gray-100"
               )}>
-                <div className="w-[240px] h-[180px] flex-shrink-0">
+                {/* Activity 1 */}
+                <div className="flex gap-4">
                   <Image
-                    src="/1.webp"
+                    src="/placeholder.svg?height=100&width=100"
                     alt="Senso-ji Temple"
-                    width={240}
-                    height={180}
-                    className="w-full h-full object-cover"
+                    width={100}
+                    height={100}
+                    className={cn(
+                      "w-20 h-20 rounded-xl object-cover",
+                      theme === "dark" ? "bg-[#232b39]" : "bg-white border border-blue-100"
+                    )}
                   />
-                </div>
-                <div className="flex-1 p-6">
-                  <h3 className="text-lg font-semibold mb-3">Senso-ji Temple & Nakamise Shopping Street</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>Timing: 8:15 am Morning</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>Duration: 3 hours</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      <span>Pick up: From Hotel</span>
+                  <div className="flex-1">
+                    <h3 className={cn(
+                      "font-semibold",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>Senso-ji Temple & Nakamise Shopping Street Senso-ji</h3>
+                    <div className={cn(
+                      "text-sm mt-1 space-y-1",
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    )}>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Timing: 8:15 am Morning</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Duration: 3 hours</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        <span>Pick up: From Hotel</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Activity 2 */}
-              <div className={cn(
-                "rounded-xl flex overflow-hidden",
-                theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
-              )}>
-                <div className="w-[240px] h-[180px] flex-shrink-0">
+                {/* Activity 2 */}
+                <div className="flex gap-4">
                   <Image
-                    src="/2.jpg"
+                    src="/placeholder.svg?height=100&width=100"
                     alt="Tokyo Sky Tree"
-                    width={240}
-                    height={180}
-                    className="w-full h-full object-cover"
+                    width={100}
+                    height={100}
+                    className={cn(
+                      "w-20 h-20 rounded-xl object-cover",
+                      theme === "dark" ? "bg-[#232b39]" : "bg-white border border-blue-100"
+                    )}
                   />
-                </div>
-                <div className="flex-1 p-6">
-                  <h3 className="text-lg font-semibold mb-3">Tokyo Sky Tree</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>Timing: 1:00 pm Afternoon</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>Duration: 3 hours</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      <span>Pick up: From Nakamise Street</span>
+                  <div className="flex-1">
+                    <h3 className={cn(
+                      "font-semibold",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>Tokyo Sky Tree</h3>
+                    <div className={cn(
+                      "text-sm mt-1 space-y-1",
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    )}>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Timing: 1:00 pm Afternoon</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Duration: 3 hours</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        <span>Pick up: From Nakamise Street</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Activity 3 */}
-              <div className={cn(
-                "rounded-xl flex overflow-hidden",
-                theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
-              )}>
-                <div className="w-[240px] h-[180px] flex-shrink-0">
+                {/* Activity 3 */}
+                <div className="flex gap-4">
                   <Image
-                    src="/3.jpg"
+                    src="/placeholder.svg?height=100&width=100"
                     alt="Kimono Wearing"
-                    width={240}
-                    height={180}
-                    className="w-full h-full object-cover"
+                    width={100}
+                    height={100}
+                    className={cn(
+                      "w-20 h-20 rounded-xl object-cover",
+                      theme === "dark" ? "bg-[#232b39]" : "bg-white border border-blue-100"
+                    )}
                   />
-                </div>
-                <div className="flex-1 p-6">
-                  <h3 className="text-lg font-semibold mb-3">Kimono Wearing</h3>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>Timing: Anytime before 8:00pm</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      <span>Duration: 1-2 hours</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      <span>Pick up: From Hotel</span>
+                  <div className="flex-1">
+                    <h3 className={cn(
+                      "font-semibold",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>Kimono Wearing</h3>
+                    <div className={cn(
+                      "text-sm mt-1 space-y-1",
+                      theme === "dark" ? "text-gray-400" : "text-gray-600"
+                    )}>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Timing: Anytime before 8:00pm</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Duration: 1-2 hours</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        <span>Pick up: From Hotel</span>
+                      </div>
                     </div>
                   </div>
                 </div>
