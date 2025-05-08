@@ -134,7 +134,7 @@ export default function TravelDashboard() {
           <div className="space-y-6">
             <section>
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-mont-700">Accommodation</h2>
+                <h2 className="text-xl font-mont-700">Accomodation</h2>
                 <a href="#" className="text-sm text-yellow-400">
                   See all
                 </a>
@@ -371,12 +371,20 @@ export default function TravelDashboard() {
           <div className="md:hidden flex justify-between items-center">
             <NavButton icon={<Home className="h-6 w-6" />} label="Home" active />
             <NavButton icon={<Search className="h-6 w-6" />} label="Search" />
-            <NavButton
-              icon={<Plus className="h-6 w-6" />}
-              label="Add"
-              className="bg-lime-400 text-black rounded-full p-3 -mt-8 shadow-lg"
+            <button
               onClick={() => setIsPlanningModalOpen(true)}
-            />
+              className="flex flex-col items-center justify-center"
+              style={{ background: "none", border: "none", padding: 0 }}
+            >
+              <span className="relative flex items-center justify-center">
+                <span className="bg-lime-400/10 rounded-full w-12 h-12 flex items-center justify-center">
+                  <span className="bg-lime-400 rounded-full w-8 h-8 flex items-center justify-center shadow-lg">
+                    <Plus className="h-6 w-6 text-black" />
+                  </span>
+                </span>
+              </span>
+              <span className="text-xs mt-1 text-lime-400">Add</span>
+            </button>
             <NavButton icon={<Heart className="h-6 w-6" />} label="Favorites" />
             <NavButton icon={<User className="h-6 w-6" />} label="Profile" />
           </div>
