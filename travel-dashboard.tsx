@@ -437,11 +437,20 @@ export default function TravelDashboard() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-[60%] p-6 bg-white">
-                    <h3 className="text-lg font-semibold text-black mb-3">
+                  <div className={cn(
+                    "w-[60%] p-6",
+                    theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                  )}>
+                    <h3 className={cn(
+                      "text-lg font-semibold mb-3",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       Senso-ji Temple & Nakamise Shopping Street
                     </h3>
-                    <div className="space-y-2 text-gray-600">
+                    <div className={cn(
+                      "space-y-2",
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    )}>
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>Timing: 8:15 am Morning</span>
@@ -468,11 +477,20 @@ export default function TravelDashboard() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-[60%] p-6 bg-white">
-                    <h3 className="text-lg font-semibold text-black mb-3">
+                  <div className={cn(
+                    "w-[60%] p-6",
+                    theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                  )}>
+                    <h3 className={cn(
+                      "text-lg font-semibold mb-3",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       Tokyo Sky Tree
                     </h3>
-                    <div className="space-y-2 text-gray-600">
+                    <div className={cn(
+                      "space-y-2",
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    )}>
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>Timing: 1:00 pm Afternoon</span>
@@ -499,11 +517,20 @@ export default function TravelDashboard() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="w-[60%] p-6 bg-white">
-                    <h3 className="text-lg font-semibold text-black mb-3">
+                  <div className={cn(
+                    "w-[60%] p-6",
+                    theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                  )}>
+                    <h3 className={cn(
+                      "text-lg font-semibold mb-3",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       Kimono Wearing
                     </h3>
-                    <div className="space-y-2 text-gray-600">
+                    <div className={cn(
+                      "space-y-2",
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    )}>
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>Timing: Anytime before 8:00pm</span>
