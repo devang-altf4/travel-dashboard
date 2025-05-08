@@ -73,7 +73,7 @@ export default function TravelDashboard() {
               <h2 className="text-xl font-semibold mb-4">Your Upcoming Trip</h2>
               <div className="relative rounded-xl overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=800"
+                  src="/Tokyo.svg"
                   alt="Tokyo skyline with Tokyo Tower"
                   width={800}
                   height={400}
@@ -118,34 +118,15 @@ export default function TravelDashboard() {
               </div>
             </section>
 
-            <section className="bg-blue-600 rounded-xl p-4">
-              <div className="flex justify-between items-center mb-2">
-                <h2 className="text-xl font-semibold">Flight Details</h2>
-                <a href="#" className="text-sm">
-                  See all
-                </a>
-              </div>
-              <p className="text-gray-200">26.01.2025, 10:50 am</p>
-              <div className="flex items-center justify-between mt-2">
-                <div>
-                  <div className="font-bold text-lg">DEL</div>
-                  <div className="text-sm text-gray-200">Delhi, India</div>
-                </div>
-                <ArrowRight className="h-5 w-5 text-white mx-4" />
-                <div>
-                  <div className="font-bold text-lg">NRT</div>
-                  <div className="text-sm text-gray-200">Narita, Tokyo</div>
-                </div>
-                <div className="hidden md:block ml-4">
-                  <Image
-                    src="/placeholder.svg?height=60&width=120"
-                    alt="Airplane illustration"
-                    width={120}
-                    height={60}
-                    className="h-12 w-24 object-contain"
-                  />
-                </div>
-              </div>
+            <section className="rounded-xl overflow-hidden">
+              <Image
+                src="/Flight details.svg"
+                alt="Flight Details"
+                width={800}
+                height={200}
+                className="w-full h-auto"
+                priority
+              />
             </section>
           </div>
 
