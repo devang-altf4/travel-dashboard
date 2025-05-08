@@ -443,20 +443,20 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 md:p-6 flex flex-col justify-center">
-                    <div className="font-bold text-lg md:text-xl mb-2">
+                    <div className="font-bold text-base md:text-lg mb-2 line-clamp-2">
                       Senso-ji Temple & Nakamise Shopping Street
                     </div>
-                    <div className="space-y-2 text-sm md:text-base">
+                    <div className="space-y-1 text-xs md:text-sm">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-5 w-5 text-gray-500" />
+                        <Clock className="h-4 w-4 text-gray-500" />
                         <span>Timing: 8:15 am Morning</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Clock className="h-5 w-5 text-gray-500" />
+                        <Clock className="h-4 w-4 text-gray-500" />
                         <span>Duration: 3 hours</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-gray-500" />
+                        <MapPin className="h-4 w-4 text-gray-500" />
                         <span>Pick up: From Hotel</span>
                       </div>
                     </div>
