@@ -304,7 +304,7 @@ export default function TravelDashboard() {
         </div>
 
         {/* Activities section - Full width on both layouts but with responsive adjustments */}
-        <section className={cn("mt-6 rounded-xl", theme === "dark" ? "bg-[#181c23] text-white" : "bg-white text-black")}>
+        <section className={cn("mt-6 p-6 rounded-xl", theme === "dark" ? "bg-[#181c23] text-white" : "bg-white text-black")}>
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-mont-700">Activities</h2>
             <a href="#" className={cn("text-sm font-mont-700", theme === "dark" ? "text-lime-400" : "text-blue-600")}>
@@ -331,129 +331,87 @@ export default function TravelDashboard() {
             </div>
           </div>
 
-          {/* Calendar row */}
-          <div className={cn(
-            "rounded-xl flex items-center justify-between px-4 py-3 mb-4",
-            theme === "dark"
-              ? "bg-[#232733]"
-              : "bg-white border border-[#e6e8ec]"
-          )}>
-            {/* First day (selected) */}
-            <div className="flex flex-col items-center">
-              <div className={cn(
-                "text-xs font-bold mb-1",
-                theme === "dark" ? "text-lime-400" : "text-blue-600"
-              )}>JAN</div>
-              <div className={cn(
-                "w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold",
-                theme === "dark"
-                  ? "bg-lime-400 text-black"
-                  : "bg-blue-600 text-white"
-              )}>
-                27
-              </div>
-              <div className="text-xs mt-1 font-mont-700">MON</div>
-            </div>
-            
-            {/* Other days */}
-            {[
-              { day: 28, label: "TUE" },
-              { day: 29, label: "WED" },
-              { day: 30, label: "THU" },
-              { day: 31, label: "FRI" },
-              { day: 1, label: "SAT" },
-            ].map((date, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className={cn(
-                  "text-xs font-bold mb-1",
-                  index === 4
-                    ? (theme === "dark" ? "text-[#49505e]" : "text-[#bdbdbd]")
-                    : ""
-                )}>{index === 4 ? "FEB" : ""}</div>
-                <div className={cn(
-                  "w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold",
-                  theme === "dark"
-                    ? "bg-[#232733] text-[#49505e]"
-                    : "bg-[#f7f7fa] text-[#bdbdbd] border border-[#e6e8ec]"
-                )}>
-                  {date.day}
+          <div className="lg:grid lg:grid-cols-[300px,1fr] lg:gap-6">
+            {/* Calendar section */}
+            <div className={cn(
+              "rounded-xl p-4 mb-4 lg:mb-0",
+              theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
+            )}>
+              <div className="grid grid-cols-5 gap-4">
+                <div className="flex flex-col items-center">
+                  <div className={cn(
+                    "text-xs font-bold mb-1",
+                    theme === "dark" ? "text-lime-400" : "text-blue-600"
+                  )}>JAN</div>
+                  <div className={cn(
+                    "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold",
+                    theme === "dark"
+                      ? "bg-lime-400 text-black"
+                      : "bg-blue-600 text-white"
+                  )}>
+                    27
+                  </div>
+                  <div className="text-xs mt-1">MON</div>
                 </div>
-                <div className={cn(
-                  "text-xs mt-1 font-mont-700",
-                  theme === "dark" ? "text-[#49505e]" : "text-[#bdbdbd]"
-                )}>{date.label}</div>
+                <div className="flex flex-col items-center">
+                  <div className={cn(
+                    "text-xs font-bold mb-1",
+                    theme === "dark" ? "text-[#49505e]" : "text-[#bdbdbd]"
+                  )}>FEB</div>
+                  <div className={cn(
+                    "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold",
+                    theme === "dark"
+                      ? "bg-[#232733] text-[#49505e]"
+                      : "bg-[#f7f7fa] text-[#bdbdbd] border border-[#e6e8ec]"
+                  )}>
+                    1
+                  </div>
+                  <div className="text-xs mt-1">SAT</div>
+                </div>
+                {/* Repeat for other days... */}
               </div>
-            ))}
-          </div>
 
-          {/* Day 1 row */}
-          <div className={cn(
-            "rounded-xl flex items-center px-4 py-2 mb-2",
-            theme === "dark"
-              ? "bg-[#232733]"
-              : "bg-white border border-[#e6e8ec]"
-          )}>
-            <div className={cn(
-              "font-medium py-1 px-3 rounded-full text-sm mr-2",
-              theme === "dark"
-                ? "bg-lime-400 text-black"
-                : "bg-blue-600 text-white"
-            )}>
-              Day 1
+              <div className="mt-4">
+                <div className={cn(
+                  "flex items-center gap-2 p-3 rounded-lg",
+                  theme === "dark" ? "bg-lime-400 text-black" : "bg-blue-600 text-white"
+                )}>
+                  <span>Day 1</span>
+                  <span>27.01.2025</span>
+                  <span className="ml-auto">3 Activities</span>
+                </div>
+              </div>
             </div>
-            <div className={cn(
-              "text-sm font-mont-700 mr-2",
-              theme === "dark" ? "text-white" : "text-black"
-            )}>
-              27.01.2025
-            </div>
-            <div className={cn(
-              "ml-auto text-sm font-mont-700 flex items-center gap-1",
-              theme === "dark" ? "text-lime-400" : "text-blue-600"
-            )}>
-              <span className="inline-block align-middle">🧑‍🤝‍🧑</span>
-              3 Activities
-            </div>
-          </div>
 
-          {/* Activities Grid */}
-          <div className="lg:col-span-2">
+            {/* Activities list */}
             <div className="space-y-4">
               {/* Activity 1 */}
               <div className={cn(
-                "rounded-xl flex overflow-hidden h-40 border",
-                theme === "dark" ? "bg-[#232733] border-[#2a2f3a]" : "bg-white border-[#e6e8ec]"
+                "rounded-xl flex overflow-hidden",
+                theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
               )}>
-                <div className="w-40 h-full flex-shrink-0">
+                <div className="w-[240px] h-[180px] flex-shrink-0">
                   <Image
                     src="/1.webp"
                     alt="Senso-ji Temple"
-                    width={160}
-                    height={160}
+                    width={240}
+                    height={180}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex-1 p-4">
-                  <h3 className={cn(
-                    "font-mont-700 text-lg leading-tight",
-                    theme === "dark" ? "text-white" : "text-black"
-                  )}>
-                    Senso-ji Temple & Nakamise Shopping Street
-                  </h3>
-                  <div className={cn(
-                    "text-xs mt-2 space-y-1",
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  )}>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                <div className="flex-1 p-6">
+                  <h3 className="text-lg font-semibold mb-3">Senso-ji Temple & Nakamise Shopping Street</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
                       <span>Timing: 8:15 am Morning</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
                       <span>Duration: 3 hours</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
                       <span>Pick up: From Hotel</span>
                     </div>
                   </div>
@@ -462,39 +420,31 @@ export default function TravelDashboard() {
 
               {/* Activity 2 */}
               <div className={cn(
-                "rounded-xl flex overflow-hidden h-40 border",
-                theme === "dark" ? "bg-[#232733] border-[#2a2f3a]" : "bg-white border-[#e6e8ec]"
+                "rounded-xl flex overflow-hidden",
+                theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
               )}>
-                <div className="w-40 h-full flex-shrink-0">
+                <div className="w-[240px] h-[180px] flex-shrink-0">
                   <Image
                     src="/2.jpg"
                     alt="Tokyo Sky Tree"
-                    width={160}
-                    height={160}
+                    width={240}
+                    height={180}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex-1 p-4">
-                  <h3 className={cn(
-                    "font-mont-700 text-lg",
-                    theme === "dark" ? "text-white" : "text-black"
-                  )}>
-                    Tokyo Sky Tree
-                  </h3>
-                  <div className={cn(
-                    "text-xs mt-2 space-y-1",
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  )}>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                <div className="flex-1 p-6">
+                  <h3 className="text-lg font-semibold mb-3">Tokyo Sky Tree</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
                       <span>Timing: 1:00 pm Afternoon</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
                       <span>Duration: 3 hours</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
                       <span>Pick up: From Nakamise Street</span>
                     </div>
                   </div>
@@ -503,39 +453,31 @@ export default function TravelDashboard() {
 
               {/* Activity 3 */}
               <div className={cn(
-                "rounded-xl flex overflow-hidden h-40 border",
-                theme === "dark" ? "bg-[#232733] border-[#2a2f3a]" : "bg-white border-[#e6e8ec]"
+                "rounded-xl flex overflow-hidden",
+                theme === "dark" ? "bg-[#232733]" : "bg-white border border-[#e6e8ec]"
               )}>
-                <div className="w-40 h-full flex-shrink-0">
+                <div className="w-[240px] h-[180px] flex-shrink-0">
                   <Image
                     src="/3.jpg"
                     alt="Kimono Wearing"
-                    width={160}
-                    height={160}
+                    width={240}
+                    height={180}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex-1 p-4">
-                  <h3 className={cn(
-                    "font-mont-700 text-lg",
-                    theme === "dark" ? "text-white" : "text-black"
-                  )}>
-                    Kimono Wearing
-                  </h3>
-                  <div className={cn(
-                    "text-xs mt-2 space-y-1",
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  )}>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                <div className="flex-1 p-6">
+                  <h3 className="text-lg font-semibold mb-3">Kimono Wearing</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
                       <span>Timing: Anytime before 8:00pm</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
                       <span>Duration: 1-2 hours</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
                       <span>Pick up: From Hotel</span>
                     </div>
                   </div>
