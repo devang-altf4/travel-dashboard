@@ -664,7 +664,11 @@ export default function TravelDashboard() {
       </div>
 
       {/* Journey Planning Modal */}
-      <PlanJourneyModal isOpen={isPlanningModalOpen} onClose={() => setIsPlanningModalOpen(false)} />
+      <PlanJourneyModal 
+        isOpen={isPlanningModalOpen} 
+        onClose={() => setIsPlanningModalOpen(false)} 
+        theme={theme}
+      />
     </div>
   )
 }
