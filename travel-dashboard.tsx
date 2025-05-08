@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import React from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -15,8 +16,9 @@ import {
   Plus,
   Search,
   User,
+  Moon,
+  Sun,
 } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 import PlanJourneyModal from "./components/plan-journey-modal"
 
@@ -49,19 +51,63 @@ function NavLink({ label, active = false }) {
 export default function TravelDashboard() {
   const [activeDay, setActiveDay] = useState(1)
   const [isPlanningModalOpen, setIsPlanningModalOpen] = useState(false)
+  const [theme, setTheme] = useState<"light" | "dark">("light")
+
+  // Detect theme on mount (client-side)
+  useEffect(() => {
+    const stored = typeof window !== "undefined" ? localStorage.getItem("theme") : null
+    if (stored === "dark" || stored === "light") {
+      setTheme(stored)
+      document.documentElement.classList.toggle("dark", stored === "dark")
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark")
+      document.documentElement.classList.add("dark")
+    } else {
+      setTheme("light")
+      document.documentElement.classList.remove("dark")
+    }
+  }, [])
+
+  // Update theme and persist to localStorage
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark")
+    localStorage.setItem("theme", theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+  }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={cn("min-h-screen", theme === "dark" ? "bg-black text-white" : "bg-white text-black")}>
       {/* Container with responsive padding */}
       <div className="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
         {/* Header - Similar on mobile and desktop */}
         <header className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold">Hello Chhavi!</h1>
-            <p className="text-gray-400">Ready for the trip?</p>
+            <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Ready for the trip?</p>
           </div>
-          <div className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
-            C
+          <div className="flex items-center gap-2">
+            {/* Theme toggle button */}
+            <button
+              aria-label="Toggle dark mode"
+              onClick={toggleTheme}
+              className={cn(
+                "h-10 w-10 rounded-full flex items-center justify-center transition-colors",
+                theme === "dark"
+                  ? "bg-gray-800 hover:bg-gray-700 text-yellow-400"
+                  : "bg-gray-200 hover:bg-gray-300 text-blue-600"
+              )}
+            >
+              {theme === "dark" ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+            </button>
+            <div className={cn(
+              "h-10 w-10 rounded-full flex items-center justify-center font-bold",
+              theme === "dark" ? "bg-orange-500 text-white" : "bg-orange-400 text-black"
+            )}>
+              C
+            </div>
           </div>
         </header>
 
