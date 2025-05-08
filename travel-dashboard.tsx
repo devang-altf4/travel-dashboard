@@ -526,26 +526,91 @@ export default function TravelDashboard() {
         </section>
 
         {/* Footer Navigation */}
-        <footer className="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-800 py-2 px-4 md:py-4 z-10">
+        <footer className={cn(
+          "fixed bottom-0 left-0 right-0 border-t py-2 px-4 md:py-4 z-10",
+          theme === "dark"
+            ? "bg-gray-900 border-gray-800"
+            : "bg-white border-gray-200"
+        )}>
           <div className="md:hidden flex justify-between items-center">
-            <NavButton icon={<Home className="h-6 w-6" />} label="Home" active />
-            <NavButton icon={<Search className="h-6 w-6" />} label="Search" />
+            {/* Home button */}
+            <button
+              className={cn(
+                "flex flex-col items-center justify-center",
+                "relative"
+              )}
+            >
+              <span className={cn(
+                "flex items-center justify-center",
+                theme === "dark"
+                  ? ""
+                  : "absolute -top-2 left-1/2 -translate-x-1/2"
+              )}>
+                {theme === "dark" ? null : (
+                  <span className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center z-0" />
+                )}
+                <Home
+                  className={cn(
+                    "h-6 w-6 z-10",
+                    theme === "dark" ? "text-lime-400" : "text-blue-600"
+                  )}
+                />
+              </span>
+              <span className={cn(
+                "text-xs mt-1",
+                theme === "dark" ? "text-lime-400" : "text-blue-600"
+              )}>Home</span>
+            </button>
+            {/* Search button */}
+            <button className="flex flex-col items-center justify-center">
+              <Search className={cn(
+                "h-6 w-6",
+                theme === "dark" ? "text-gray-500" : "text-gray-500"
+              )} />
+              <span className={cn(
+                "text-xs mt-1",
+                theme === "dark" ? "text-gray-500" : "text-gray-500"
+              )}>Search</span>
+            </button>
+            {/* Plus button */}
             <button
               onClick={() => setIsPlanningModalOpen(true)}
               className="flex flex-col items-center justify-center"
               style={{ background: "none", border: "none", padding: 0 }}
             >
-              <span className="relative flex items-center justify-center">
-                <span className="bg-lime-400/10 rounded-full w-12 h-12 flex items-center justify-center">
-                  <span className="bg-lime-400 rounded-full w-8 h-8 flex items-center justify-center shadow-lg">
-                    <Plus className="h-6 w-6 text-black" />
-                  </span>
-                </span>
+              <span className="flex items-center justify-center">
+                <Plus className={cn(
+                  "h-8 w-8",
+                  theme === "dark" ? "text-black bg-lime-400 rounded-full p-1 shadow-lg" : "text-blue-600"
+                )} />
               </span>
-              <span className="text-xs mt-1 text-lime-400">Add</span>
+              <span className={cn(
+                "text-xs mt-1",
+                theme === "dark" ? "text-lime-400" : "text-blue-600"
+              )}>Add</span>
             </button>
-            <NavButton icon={<Heart className="h-6 w-6" />} label="Favorites" />
-            <NavButton icon={<User className="h-6 w-6" />} label="Profile" />
+            {/* Favorites button */}
+            <button className="flex flex-col items-center justify-center">
+              <Heart className={cn(
+                "h-6 w-6",
+                theme === "dark" ? "text-gray-500" : "text-gray-500"
+              )} />
+              <span className={cn(
+                "text-xs mt-1",
+                theme === "dark" ? "text-gray-500" : "text-gray-500"
+              )}>Favorites</span>
+            </button>
+            {/* Profile button */}
+            <button className="flex flex-col items-center justify-center">
+              <User className={cn(
+                "h-6 w-6",
+                theme === "dark" ? "text-gray-500" : "text-gray-500"
+              )} />
+              <span className={cn(
+                "text-xs mt-1",
+                theme === "dark" ? "text-gray-500" : "text-gray-500"
+              )}>Profile</span>
+            </button>
           </div>
 
           {/* Desktop Footer */}
