@@ -428,39 +428,35 @@ export default function TravelDashboard() {
                 theme === "dark" ? "bg-[#181f2a]" : "bg-gray-100"
               )}>
                 {/* Activity Card 1 */}
-                <div className="flex h-48 rounded-xl overflow-hidden border border-gray-400">
-                  <div className="relative w-[40%]">
+                <div className={cn(
+                  "flex flex-row items-center rounded-xl border border-gray-300 bg-white shadow-sm overflow-hidden",
+                  "h-36 md:h-48", // taller height for better space utilization
+                  theme === "dark" && "bg-black text-white border-gray-700"
+                )}>
+                  <div className="relative w-32 h-full md:w-[40%] md:h-full flex-shrink-0">
                     <Image
                       src="/1.webp"
                       alt="Senso-ji Temple"
                       fill
                       className="object-cover"
+                      style={{ objectPosition: "center" }}
                     />
                   </div>
-                  <div className={cn(
-                    "w-[60%] p-6",
-                    theme === "dark" ? "bg-black text-white" : "bg-white text-black"
-                  )}>
-                    <h3 className={cn(
-                      "text-lg font-semibold mb-3",
-                      theme === "dark" ? "text-white" : "text-black"
-                    )}>
+                  <div className="flex-1 p-4 md:p-6 flex flex-col justify-center">
+                    <div className="font-bold text-lg md:text-xl mb-2">
                       Senso-ji Temple & Nakamise Shopping Street
-                    </h3>
-                    <div className={cn(
-                      "space-y-2",
-                      theme === "dark" ? "text-gray-300" : "text-gray-600"
-                    )}>
+                    </div>
+                    <div className="space-y-2 text-sm md:text-base">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-5 w-5 text-gray-500" />
                         <span>Timing: 8:15 am Morning</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-5 w-5 text-gray-500" />
                         <span>Duration: 3 hours</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin className="h-5 w-5 text-gray-500" />
                         <span>Pick up: From Hotel</span>
                       </div>
                     </div>
@@ -468,39 +464,35 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity Card 2 */}
-                <div className="flex h-48 rounded-xl overflow-hidden border border-gray-400">
-                  <div className="relative w-[40%]">
+                <div className={cn(
+                  "flex flex-row items-center rounded-xl border border-gray-300 bg-white shadow-sm overflow-hidden",
+                  "h-36 md:h-48",
+                  theme === "dark" && "bg-black text-white border-gray-700"
+                )}>
+                  <div className="relative w-32 h-full md:w-[40%] md:h-full flex-shrink-0">
                     <Image
                       src="/2.jpg"
                       alt="Tokyo Sky Tree"
                       fill
                       className="object-cover"
+                      style={{ objectPosition: "center" }}
                     />
                   </div>
-                  <div className={cn(
-                    "w-[60%] p-6",
-                    theme === "dark" ? "bg-black text-white" : "bg-white text-black"
-                  )}>
-                    <h3 className={cn(
-                      "text-lg font-semibold mb-3",
-                      theme === "dark" ? "text-white" : "text-black"
-                    )}>
+                  <div className="flex-1 p-4 md:p-6 flex flex-col justify-center">
+                    <div className="font-bold text-lg md:text-xl mb-2">
                       Tokyo Sky Tree
-                    </h3>
-                    <div className={cn(
-                      "space-y-2",
-                      theme === "dark" ? "text-gray-300" : "text-gray-600"
-                    )}>
+                    </div>
+                    <div className="space-y-2 text-sm md:text-base">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-5 w-5 text-gray-500" />
                         <span>Timing: 1:00 pm Afternoon</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-5 w-5 text-gray-500" />
                         <span>Duration: 3 hours</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin className="h-5 w-5 text-gray-500" />
                         <span>Pick up: From Nakamise Street</span>
                       </div>
                     </div>
@@ -508,39 +500,35 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity Card 3 */}
-                <div className="flex h-48 rounded-xl overflow-hidden border border-gray-400">
-                  <div className="relative w-[40%]">
+                <div className={cn(
+                  "flex flex-row items-center rounded-xl border border-gray-300 bg-white shadow-sm overflow-hidden",
+                  "h-36 md:h-48",
+                  theme === "dark" && "bg-black text-white border-gray-700"
+                )}>
+                  <div className="relative w-32 h-full md:w-[40%] md:h-full flex-shrink-0">
                     <Image
                       src="/3.jpg"
                       alt="Kimono Wearing"
                       fill
                       className="object-cover"
+                      style={{ objectPosition: "center" }}
                     />
                   </div>
-                  <div className={cn(
-                    "w-[60%] p-6",
-                    theme === "dark" ? "bg-black text-white" : "bg-white text-black"
-                  )}>
-                    <h3 className={cn(
-                      "text-lg font-semibold mb-3",
-                      theme === "dark" ? "text-white" : "text-black"
-                    )}>
+                  <div className="flex-1 p-4 md:p-6 flex flex-col justify-center">
+                    <div className="font-bold text-lg md:text-xl mb-2">
                       Kimono Wearing
-                    </h3>
-                    <div className={cn(
-                      "space-y-2",
-                      theme === "dark" ? "text-gray-300" : "text-gray-600"
-                    )}>
+                    </div>
+                    <div className="space-y-2 text-sm md:text-base">
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-5 w-5 text-gray-500" />
                         <span>Timing: Anytime before 8:00pm</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-5 w-5 text-gray-500" />
                         <span>Duration: 1-2 hours</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin className="h-5 w-5 text-gray-500" />
                         <span>Pick up: From Hotel</span>
                       </div>
                     </div>
