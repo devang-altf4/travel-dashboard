@@ -33,13 +33,15 @@ function NavButton({ icon, label, active = false, className = "", onClick = () =
   )
 }
 
-function NavLink({ label, active = false }) {
+function NavLink({ label, active = false, theme }) {
   return (
     <a
       href="#"
       className={cn(
         "text-sm font-medium hover:text-lime-400 transition-colors",
-        active ? "text-lime-400" : "text-gray-300",
+        theme === "dark"
+          ? (active ? "text-lime-400" : "text-gray-300")
+          : (active ? "text-black font-bold" : "text-black")
       )}
     >
       {label}
@@ -617,20 +619,23 @@ export default function TravelDashboard() {
           <div className="hidden md:block max-w-7xl mx-auto">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-lime-400">
-                  <Home className="h-5 w-5" />
+                <div className={cn(
+                  "flex items-center gap-1",
+                  theme === "dark" ? "text-lime-400" : "text-black"
+                )}>
+                  <Home className={cn("h-5 w-5", theme === "dark" ? "text-lime-400" : "text-black")} />
                   <span className="font-medium">TravelBuddy</span>
                 </div>
-                <span className="text-gray-500">|</span>
-                <span className="text-sm text-gray-400">© 2025 TravelBuddy Inc.</span>
+                <span className={cn(theme === "dark" ? "text-gray-500" : "text-black")}>|</span>
+                <span className={cn("text-sm", theme === "dark" ? "text-gray-400" : "text-black")}>© 2025 TravelBuddy Inc.</span>
               </div>
 
               <div className="flex gap-8">
-                <NavLink label="Home" active />
-                <NavLink label="Destinations" />
-                <NavLink label="Trips" />
-                <NavLink label="Support" />
-                <NavLink label="About Us" />
+                <NavLink label="Home" active theme={theme} />
+                <NavLink label="Destinations" theme={theme} />
+                <NavLink label="Trips" theme={theme} />
+                <NavLink label="Support" theme={theme} />
+                <NavLink label="About Us" theme={theme} />
               </div>
 
               <div className="flex gap-4">
