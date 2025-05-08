@@ -424,30 +424,24 @@ export default function TravelDashboard() {
             {/* Right column */}
             <div className="lg:col-span-2">
               <div className={cn(
-                "rounded-2xl p-6 space-y-6",
+                "rounded-2xl space-y-4",
                 theme === "dark" ? "bg-[#181f2a]" : "bg-gray-100"
               )}>
-                {/* Activity 1 */}
-                <div className="flex gap-4">
-                  <Image
-                    src="/1.webp"
-                    alt="Senso-ji Temple"
-                    width={100}
-                    height={100}
-                    className={cn(
-                      "w-20 h-20 rounded-xl object-cover",
-                      theme === "dark" ? "bg-[#232b39]" : "bg-white border border-blue-100"
-                    )}
-                  />
-                  <div className="flex-1">
-                    <h3 className={cn(
-                      "font-semibold",
-                      theme === "dark" ? "text-white" : "text-black"
-                    )}>Senso-ji Temple & Nakamise Shopping Street Senso-ji</h3>
-                    <div className={cn(
-                      "text-sm mt-1 space-y-1",
-                      theme === "dark" ? "text-gray-400" : "text-gray-600"
-                    )}>
+                {/* Activity Card 1 */}
+                <div className="flex h-48 rounded-xl overflow-hidden">
+                  <div className="relative w-[40%]">
+                    <Image
+                      src="/1.webp"
+                      alt="Senso-ji Temple"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="w-[60%] p-6 bg-white">
+                    <h3 className="text-lg font-semibold text-black mb-3">
+                      Senso-ji Temple & Nakamise Shopping Street
+                    </h3>
+                    <div className="space-y-2 text-gray-600">
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>Timing: 8:15 am Morning</span>
@@ -463,27 +457,22 @@ export default function TravelDashboard() {
                     </div>
                   </div>
                 </div>
-                {/* Activity 2 */}
-                <div className="flex gap-4">
-                  <Image
-                    src="/2.jpg"
-                    alt="Tokyo Sky Tree"
-                    width={100}
-                    height={100}
-                    className={cn(
-                      "w-20 h-20 rounded-xl object-cover",
-                      theme === "dark" ? "bg-[#232b39]" : "bg-white border border-blue-100"
-                    )}
-                  />
-                  <div className="flex-1">
-                    <h3 className={cn(
-                      "font-semibold",
-                      theme === "dark" ? "text-white" : "text-black"
-                    )}>Tokyo Sky Tree</h3>
-                    <div className={cn(
-                      "text-sm mt-1 space-y-1",
-                      theme === "dark" ? "text-gray-400" : "text-gray-600"
-                    )}>
+
+                {/* Activity Card 2 */}
+                <div className="flex h-48 rounded-xl overflow-hidden">
+                  <div className="relative w-[40%]">
+                    <Image
+                      src="/2.jpg"
+                      alt="Tokyo Sky Tree"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="w-[60%] p-6 bg-white">
+                    <h3 className="text-lg font-semibold text-black mb-3">
+                      Tokyo Sky Tree
+                    </h3>
+                    <div className="space-y-2 text-gray-600">
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>Timing: 1:00 pm Afternoon</span>
@@ -499,27 +488,22 @@ export default function TravelDashboard() {
                     </div>
                   </div>
                 </div>
-                {/* Activity 3 */}
-                <div className="flex gap-4">
-                  <Image
-                    src="/3.jpg"
-                    alt="Kimono Wearing"
-                    width={100}
-                    height={100}
-                    className={cn(
-                      "w-20 h-20 rounded-xl object-cover",
-                      theme === "dark" ? "bg-[#232b39]" : "bg-white border border-blue-100"
-                    )}
-                  />
-                  <div className="flex-1">
-                    <h3 className={cn(
-                      "font-semibold",
-                      theme === "dark" ? "text-white" : "text-black"
-                    )}>Kimono Wearing</h3>
-                    <div className={cn(
-                      "text-sm mt-1 space-y-1",
-                      theme === "dark" ? "text-gray-400" : "text-gray-600"
-                    )}>
+
+                {/* Activity Card 3 */}
+                <div className="flex h-48 rounded-xl overflow-hidden">
+                  <div className="relative w-[40%]">
+                    <Image
+                      src="/3.jpg"
+                      alt="Kimono Wearing"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="w-[60%] p-6 bg-white">
+                    <h3 className="text-lg font-semibold text-black mb-3">
+                      Kimono Wearing
+                    </h3>
+                    <div className="space-y-2 text-gray-600">
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         <span>Timing: Anytime before 8:00pm</span>
