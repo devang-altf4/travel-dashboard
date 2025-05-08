@@ -271,8 +271,9 @@ export default function TravelDashboard() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="bg-gray-900 rounded-xl p-4 space-y-4">
-                <div className="flex gap-4">
+              <div className="space-y-4">
+                {/* Activity 1 */}
+                <div className="bg-gray-900 rounded-xl p-4 flex gap-4">
                   <Image
                     src="/1.webp"
                     alt="Senso-ji Temple"
@@ -281,11 +282,11 @@ export default function TravelDashboard() {
                     className="w-24 h-24 rounded-lg object-cover"
                   />
                   <div className="flex-1">
-                    <h3 className="font-semibold">Senso-ji Temple & Nakamise Shopping Street Senso-ji</h3>
+                    <h3 className="font-mont-700 text-lg text-white">Senso-ji Temple & Nakamise Shopping Street Senso-ji</h3>
                     <div className="text-sm text-gray-400 mt-1">
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
-                        <span>Timing: 8:15 am Morning</span>
+                        <span><span className="font-bold">Timing:</span> 8:15 am Morning</span>
                       </div>
                       <div className="flex items-center gap-1 mt-1">
                         <Clock className="h-3 w-3" />
@@ -299,7 +300,8 @@ export default function TravelDashboard() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                {/* Activity 2 */}
+                <div className="bg-gray-900 rounded-xl p-4 flex gap-4">
                   <Image
                     src="/2.jpg"
                     alt="Tokyo Sky Tree"
@@ -308,7 +310,7 @@ export default function TravelDashboard() {
                     className="w-24 h-24 rounded-lg object-cover"
                   />
                   <div className="flex-1">
-                    <h3 className="font-semibold">Tokyo Sky Tree</h3>
+                    <h3 className="font-semibold text-lg text-white">Tokyo Sky Tree</h3>
                     <div className="text-sm text-gray-400 mt-1">
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
@@ -326,7 +328,8 @@ export default function TravelDashboard() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                {/* Activity 3 */}
+                <div className="bg-gray-900 rounded-xl p-4 flex gap-4">
                   <Image
                     src="/3.jpg"
                     alt="Kimono Wearing"
@@ -335,7 +338,7 @@ export default function TravelDashboard() {
                     className="w-24 h-24 rounded-lg object-cover"
                   />
                   <div className="flex-1">
-                    <h3 className="font-semibold">Kimono Wearing</h3>
+                    <h3 className="font-semibold text-lg text-white">Kimono Wearing</h3>
                     <div className="text-sm text-gray-400 mt-1">
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
