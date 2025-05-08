@@ -134,7 +134,7 @@ export default function TravelDashboard() {
           <div className="space-y-6">
             <section>
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">Accommodation</h2>
+                <h2 className="text-xl font-mont-700">Accommodation</h2>
                 <a href="#" className="text-sm text-yellow-400">
                   See all
                 </a>
@@ -157,14 +157,14 @@ export default function TravelDashboard() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <h3 className="font-semibold">Shinagawa Prince Hotel</h3>
-                    <div className="text-sm text-gray-400">
+                    <h3 className="font-mont-700">Shinagawa Prince Hotel</h3>
+                    <div className="text-sm text-gray-400 font-mont-700">
                       <p>Check in: 26.01.2025, 11:15 pm</p>
                       <p>Check out: 28.01.2025, 11:15 am</p>
                     </div>
                     <div className="flex justify-between items-center mt-2">
-                      <div className="text-sm">2 Nights</div>
-                      <div className="flex items-center text-green-400 text-sm">
+                      <div className="text-sm font-mont-700">2 Nights</div>
+                      <div className="flex items-center text-green-400 text-sm font-mont-700">
                         <div className="h-4 w-4 rounded-full border border-green-400 flex items-center justify-center mr-1">
                           <div className="h-2 w-2 bg-green-400 rounded-full"></div>
                         </div>
@@ -189,14 +189,14 @@ export default function TravelDashboard() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <h3 className="font-semibold">Mercure Tokyo Hotel</h3>
-                    <div className="text-sm text-gray-400">
+                    <h3 className="font-mont-700">Mercure Tokyo Hotel</h3>
+                    <div className="text-sm text-gray-400 font-mont-700">
                       <p>Check in: 28.01.2025, 6:00 pm</p>
                       <p>Check out: 30.01.2025, 11:15 am</p>
                     </div>
                     <div className="flex justify-between items-center mt-2">
-                      <div className="text-sm">2 Nights</div>
-                      <div className="flex items-center text-orange-400 text-sm">
+                      <div className="text-sm font-mont-700">2 Nights</div>
+                      <div className="flex items-center text-orange-400 text-sm font-mont-700">
                         <div className="h-4 w-4 rounded-full border border-orange-400 flex items-center justify-center mr-1">
                           <div className="h-2 w-2 bg-orange-400 rounded-full"></div>
                         </div>
@@ -214,7 +214,7 @@ export default function TravelDashboard() {
         {/* Activities section - Full width on both layouts but with responsive adjustments */}
         <section className="mt-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold">Activities</h2>
+            <h2 className="text-xl font-mont-700">Activities</h2>
             <a href="#" className="text-sm text-yellow-400">
               See all
             </a>
@@ -285,18 +285,18 @@ export default function TravelDashboard() {
                   </div>
                   <div className="flex-1 flex flex-col justify-center px-4 py-2">
                     <h3 className="font-mont-700 text-lg text-white leading-tight">Senso-ji Temple & Nakamise Shopping Street Senso-ji</h3>
-                    <div className="text-xs text-gray-400 mt-2 mb-1 space-y-1">
+                    <div className="text-xs text-gray-400 mt-2 mb-1 space-y-1 font-mont-700">
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
-                        <span><span className="font-bold">Timing:</span> 8:15 am Morning</span>
+                        <span><span className="font-mont-700">Timing:</span> 8:15 am Morning</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
-                        <span>Duration: 3 hours</span>
+                        <span className="font-mont-700">Duration: 3 hours</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
-                        <span>Pick up: From Hotel</span>
+                        <span className="font-mont-700">Pick up: From Hotel</span>
                       </div>
                     </div>
                   </div>
@@ -314,19 +314,19 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 flex flex-col justify-center">
-                    <h3 className="font-semibold text-lg text-white">Tokyo Sky Tree</h3>
-                    <div className="text-sm text-gray-400 mt-1">
+                    <h3 className="font-mont-700 text-lg text-white">Tokyo Sky Tree</h3>
+                    <div className="text-sm text-gray-400 mt-1 font-mont-700">
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
-                        <span>Timing: 1:00 pm Afternoon</span>
+                        <span className="font-mont-700">Timing: 1:00 pm Afternoon</span>
                       </div>
                       <div className="flex items-center gap-1 mt-1">
                         <Clock className="h-3 w-3" />
-                        <span>Duration: 3 hours</span>
+                        <span className="font-mont-700">Duration: 3 hours</span>
                       </div>
                       <div className="flex items-center gap-1 mt-1">
                         <MapPin className="h-3 w-3" />
-                        <span>Pick up: From Nakamise Street</span>
+                        <span className="font-mont-700">Pick up: From Nakamise Street</span>
                       </div>
                     </div>
                   </div>
@@ -344,19 +344,19 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 flex flex-col justify-center">
-                    <h3 className="font-semibold text-lg text-white">Kimono Wearing</h3>
-                    <div className="text-sm text-gray-400 mt-1">
+                    <h3 className="font-mont-700 text-lg text-white">Kimono Wearing</h3>
+                    <div className="text-sm text-gray-400 mt-1 font-mont-700">
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
-                        <span>Timing: Anytime before 8:00pm</span>
+                        <span className="font-mont-700">Timing: Anytime before 8:00pm</span>
                       </div>
                       <div className="flex items-center gap-1 mt-1">
                         <Clock className="h-3 w-3" />
-                        <span>Duration: 1-2 hours</span>
+                        <span className="font-mont-700">Duration: 1-2 hours</span>
                       </div>
                       <div className="flex items-center gap-1 mt-1">
                         <MapPin className="h-3 w-3" />
-                        <span>Pick up: From Hotel</span>
+                        <span className="font-mont-700">Pick up: From Hotel</span>
                       </div>
                     </div>
                   </div>
