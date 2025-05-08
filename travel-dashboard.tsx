@@ -186,9 +186,17 @@ export default function TravelDashboard() {
                 </a>
               </div>
               {/* Responsive: horizontal scroll on mobile, grid on desktop */}
-              <div className="flex overflow-x-auto gap-4 pb-2 -mx-4 px-4 lg:grid lg:grid-cols-1 lg:gap-4 lg:overflow-visible lg:mx-0 lg:px-0">
+              <div
+                className={cn(
+                  "flex overflow-x-auto gap-4 pb-2 -mx-4 px-4 lg:grid lg:grid-cols-1 lg:gap-4 lg:overflow-visible lg:mx-0 lg:px-0 rounded-xl",
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                )}
+              >
                 {/* Card 1 */}
-                <div className="rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
+                <div className={cn(
+                  "rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none border border-gray-300",
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                )}>
                   <div className="relative">
                     <Image
                       src="/real shinagawa.jpg"
@@ -203,13 +211,26 @@ export default function TravelDashboard() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <h3 className="font-mont-700">Shinagawa Prince Hotel</h3>
-                    <div className="text-sm text-gray-400 font-mont-700">
+                    <h3 className={cn(
+                      "font-mont-700 text-lg",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
+                      Shinagawa Prince Hotel
+                    </h3>
+                    <div className={cn(
+                      "text-sm font-mont-700",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       <p>Check in: 26.01.2025, 11:15 pm</p>
                       <p>Check out: 28.01.2025, 11:15 am</p>
                     </div>
                     <div className="flex justify-between items-center mt-2">
-                      <div className="text-sm font-mont-700">2 Nights</div>
+                      <div className={cn(
+                        "text-sm font-mont-700",
+                        theme === "dark" ? "text-white" : "text-black"
+                      )}>
+                        2 Nights
+                      </div>
                       <div className="flex items-center text-green-400 text-sm font-mont-700">
                         <div className="h-4 w-4 rounded-full border border-green-400 flex items-center justify-center mr-1">
                           <div className="h-2 w-2 bg-green-400 rounded-full"></div>
@@ -220,7 +241,10 @@ export default function TravelDashboard() {
                   </div>
                 </div>
                 {/* Card 2 */}
-                <div className="rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none">
+                <div className={cn(
+                  "rounded-xl overflow-hidden min-w-[270px] max-w-xs flex-shrink-0 lg:min-w-0 lg:max-w-none border border-gray-300",
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                )}>
                   <div className="relative">
                     <Image
                       src="/shinagawa hotel.jpg"
@@ -235,13 +259,26 @@ export default function TravelDashboard() {
                     </div>
                   </div>
                   <div className="p-3">
-                    <h3 className="font-mont-700">Mercure Tokyo Hotel</h3>
-                    <div className="text-sm text-gray-400 font-mont-700">
+                    <h3 className={cn(
+                      "font-mont-700 text-lg",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
+                      Mercure Tokyo Hotel
+                    </h3>
+                    <div className={cn(
+                      "text-sm font-mont-700",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       <p>Check in: 28.01.2025, 6:00 pm</p>
                       <p>Check out: 30.01.2025, 11:15 am</p>
                     </div>
                     <div className="flex justify-between items-center mt-2">
-                      <div className="text-sm font-mont-700">2 Nights</div>
+                      <div className={cn(
+                        "text-sm font-mont-700",
+                        theme === "dark" ? "text-white" : "text-black"
+                      )}>
+                        2 Nights
+                      </div>
                       <div className="flex items-center text-orange-400 text-sm font-mont-700">
                         <div className="h-4 w-4 rounded-full border border-orange-400 flex items-center justify-center mr-1">
                           <div className="h-2 w-2 bg-orange-400 rounded-full"></div>
@@ -258,7 +295,7 @@ export default function TravelDashboard() {
         </div>
 
         {/* Activities section - Full width on both layouts but with responsive adjustments */}
-        <section className="mt-6">
+        <section className={cn("mt-6 rounded-xl", theme === "dark" ? "bg-black text-white" : "bg-white text-black")}>
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-mont-700">Activities</h2>
             <a href="#" className="text-sm text-yellow-400">
@@ -319,7 +356,10 @@ export default function TravelDashboard() {
             <div className="lg:col-span-2">
               <div className="space-y-4">
                 {/* Activity 1 */}
-                <div className="rounded-xl flex overflow-hidden h-40">
+                <div className={cn(
+                  "rounded-xl flex overflow-hidden h-40 border border-gray-300",
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                )}>
                   <div className="w-40 h-full flex-shrink-0">
                     <Image
                       src="/1.webp"
@@ -329,9 +369,17 @@ export default function TravelDashboard() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 flex flex-col justify-center px-4 py-2">
-                    <h3 className="font-mont-700 text-lg text-white leading-tight">Senso-ji Temple & Nakamise Shopping Street Senso-ji</h3>
-                    <div className="text-xs text-gray-400 mt-2 mb-1 space-y-1 font-mont-700">
+                  <div className="flex-1 p-4 flex flex-col justify-center">
+                    <h3 className={cn(
+                      "font-mont-700 text-lg leading-tight",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
+                      Senso-ji Temple & Nakamise Shopping Street Senso-ji
+                    </h3>
+                    <div className={cn(
+                      "text-xs mt-2 mb-1 space-y-1 font-mont-700",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         <span><span className="font-mont-700">Timing:</span> 8:15 am Morning</span>
@@ -349,7 +397,10 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity 2 */}
-                <div className="rounded-xl flex overflow-hidden h-40">
+                <div className={cn(
+                  "rounded-xl flex overflow-hidden h-40 border border-gray-300",
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                )}>
                   <div className="w-40 h-full flex-shrink-0">
                     <Image
                       src="/2.jpg"
@@ -360,8 +411,16 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 flex flex-col justify-center">
-                    <h3 className="font-mont-700 text-lg text-white">Tokyo Sky Tree</h3>
-                    <div className="text-sm text-gray-400 mt-1 font-mont-700">
+                    <h3 className={cn(
+                      "font-mont-700 text-lg",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
+                      Tokyo Sky Tree
+                    </h3>
+                    <div className={cn(
+                      "text-sm mt-1 font-mont-700",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         <span className="font-mont-700">Timing: 1:00 pm Afternoon</span>
@@ -379,7 +438,10 @@ export default function TravelDashboard() {
                 </div>
 
                 {/* Activity 3 */}
-                <div className="rounded-xl flex overflow-hidden h-40">
+                <div className={cn(
+                  "rounded-xl flex overflow-hidden h-40 border border-gray-300",
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                )}>
                   <div className="w-40 h-full flex-shrink-0">
                     <Image
                       src="/3.jpg"
@@ -390,8 +452,16 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 flex flex-col justify-center">
-                    <h3 className="font-mont-700 text-lg text-white">Kimono Wearing</h3>
-                    <div className="text-sm text-gray-400 mt-1 font-mont-700">
+                    <h3 className={cn(
+                      "font-mont-700 text-lg",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
+                      Kimono Wearing
+                    </h3>
+                    <div className={cn(
+                      "text-sm mt-1 font-mont-700",
+                      theme === "dark" ? "text-white" : "text-black"
+                    )}>
                       <div className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         <span className="font-mont-700">Timing: Anytime before 8:00pm</span>
