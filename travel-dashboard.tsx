@@ -126,7 +126,7 @@ export default function TravelDashboard() {
                   className="w-full h-[200px] md:h-[300px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
-                  <h3 className="text-4xl font-bold">TOKYO</h3>
+                  <h3 className="text-5xl font-[MODERNIZ] tracking-wider font-bold text-white">TOKYO</h3>
                   <p className="text-gray-300">27.01.2025 - 02.02.2025</p>
                   <div className="flex flex-wrap gap-4 mt-4">
                     <div className="flex items-center gap-2">
@@ -443,7 +443,7 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 md:p-6 flex flex-col justify-center">
-                    <div className="font-bold text-base md:text-lg mb-2 line-clamp-2">
+                    <div className="font-bold font-mont-700 text-base md:text-lg mb-2 line-clamp-2">
                       Senso-ji Temple & Nakamise Shopping Street
                     </div>
                     <div className="space-y-1 text-xs md:text-sm">
@@ -479,7 +479,7 @@ export default function TravelDashboard() {
                     />
                   </div>
                   <div className="flex-1 p-4 md:p-6 flex flex-col justify-center">
-                    <div className="font-bold text-lg md:text-xl mb-2">
+                    <div className="font-bold font-mont-700 text-lg md:text-xl mb-2">
                       Tokyo Sky Tree
                     </div>
                     <div className="space-y-2 text-sm md:text-base">
