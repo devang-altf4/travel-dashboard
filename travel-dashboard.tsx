@@ -117,49 +117,35 @@ export default function TravelDashboard() {
           <div className="lg:col-span-2 space-y-6">
             <section>
               <h2 className="text-xl font-semibold mb-4">Your Upcoming Trip</h2>
-              <div className="relative rounded-xl overflow-hidden">
-                <Image
-                  src="/Tokyo.svg"
-                  alt="Tokyo skyline with Tokyo Tower"
-                  width={800}
-                  height={400}
-                  className="w-full h-[200px] md:h-[300px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
-                  <h3 className="text-5xl font-[MODERNIZ] tracking-wider font-bold text-white">TOKYO</h3>
-                  <p className="text-gray-300">27.01.2025 - 02.02.2025</p>
-                  <div className="flex flex-wrap gap-4 mt-4">
-                    <div className="flex items-center gap-2">
-                      <div className="bg-black/40 p-1 rounded-full">
-                        <Clock className="h-4 w-4 text-yellow-400" />
+              <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20">
+                <div className="aspect-square md:aspect-[21/9] relative">
+                  <Image
+                    src="/Tokyo.svg"
+                    alt="Tokyo skyline with Tokyo Tower"
+                    fill
+                    className="object-contain md:object-cover"
+                    priority
+                  />
+                  {/* Overlay content */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent hidden md:block" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white hidden md:block">
+                    <h1 className="text-4xl font-bold mb-2">TOKYO</h1>
+                    <p className="text-lg mb-4">27.01.2025 - 02.02.2025</p>
+                    <div className="flex gap-6">
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-5 w-5" />
+                        <span>8 Days Duration</span>
                       </div>
-                      <div>
-                        <div className="font-bold">8 Days</div>
-                        <div className="text-xs text-gray-300">Duration</div>
+                      <div className="flex items-center gap-2">
+                        <Users className="h-5 w-5" />
+                        <span>4 (2M,2F) Group Size</span>
                       </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="bg-black/40 p-1 rounded-full">
-                        <Users className="h-4 w-4 text-green-400" />
-                      </div>
-                      <div>
-                        <div className="font-bold">4 (2M,2F)</div>
-                        <div className="text-xs text-gray-300">Group Size</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="bg-black/40 p-1 rounded-full">
-                        <Calendar className="h-4 w-4 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="font-bold">14</div>
-                        <div className="text-xs text-gray-300">Activities</div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-5 w-5" />
+                        <span>14 Activities</span>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <ArrowUpRight className="h-5 w-5 text-white" />
                 </div>
               </div>
             </section>
